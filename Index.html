@@ -1,1 +1,70 @@
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--Beautify 
+        Ctrl+Shift+I      Linux
+        Shift + Alt + F   Windows -->
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+
+    <!--Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div clss="container pt-5">
+        <div class="row mb-3">
+            <div class="col">
+                <h1>Cars app</h1>
+            </div>
+        </div>
+    </div clss="container pt-5">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="search">Find your car</label>
+                <input type="text" class="form-control" id="search" placeholder="Model">
+                <hr>
+                <ul class="col-md-8">
+                    <li class="list-group-item list-group-item-action pointer">1</li>
+                    <li class="list-group-item list-group-item-action">1</li>
+                    <li class="list-group-item list-group-item-action">1</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-8 pt-4">
+            <div class="row">
+                <div class="col-md-5">
+                    <h2>Honda</h2>
+                    <img src="Images/Civic.jpg" alt="pic" class="rounded detailed-car-image">
+                </div>
+                <div class="col-md-7 pt-2">
+                    <h5>car details</h5>
+                    <ul>
+                        <li>Model <strong>Civic</strong></li>
+                        <li>Year <strong>2015</strong></li>
+                        <li>Owner <strong>Kavikski</strong></li>
+                         
+                    </ul>
+                    <p>+82134234</p>
+                    <button class="btn btn-outline-success mr-3">Show phone</button>
+                    <button class="btn btn-primary">Buy</button>
+                    
+                </div>
+
+            </div>
+        </div>
+
+
+</body>
+
+</html>
