@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>VueJS</title>
     <!--Beautify 
         Ctrl+Shift+I      Linux
         Shift + Alt + F   Windows -->
@@ -13,15 +13,13 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css">
 
-    <!--Vue-->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+    
 </head>
 
 <body>
 
-    <div class="container pt-5">
-        <div class="row">
+    <div class="container pt-5" id="app">
+        <div class="row mb-3">
             <div class="col">
                 <h1>Cars application</h1>
             </div>
@@ -34,37 +32,47 @@
                     <hr>
                     <ul class="list-group">
                         <li class="list-group-item list-group-item-action pointer">1</li>
-                        <li class="list-group-item list-group-item-action">1</li>
-                        <li class="list-group-item list-group-item-action">1</li>
+                        <li class="list-group-item list-group-item-action pointer">1</li>
+                        <li class="list-group-item list-group-item-action pointer">1</li>
                     </ul>
+                </div>
+            </div>
+            <div class="col-md-8 pt-3">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h2>Honda</h2>
+                        <img src="Images/Civic.jpg" alt="pic" class="rounded detailed-car-image">
+                    </div>
+                    <div class="col-md-7 pt-2">
+                        <h5>Car details</h5>
+                        <ul>
+                            <li>Model <strong>Civic</strong></li>
+                            <li>Year <strong>2015</strong></li>
+                            <li>Owner <strong>Kavikski</strong></li>
+    
+                        </ul>
+                        <p>+82134234</p>
+                        <button class="btn btn-outline-success mr-3">Show phone</button>
+                        <button class="btn btn-primary">Buy</button>
+    
+                    </div>
+    
                 </div>
             </div>
         </div>
 
 
-        <div class="col-md-8 pt-3">
-            <div class="row">
-                <div class="col-md-5">
-                    <h2>Honda</h2>
-                    <img src="Images/Civic.jpg" alt="pic" class="rounded detailed-car-image">
-                </div>
-                <div class="col-md-7 pt-2">
-                    <h5>Car details</h5>
-                    <ul>
-                        <li>Model <strong>Civic</strong></li>
-                        <li>Year <strong>2015</strong></li>
-                        <li>Owner <strong>Kavikski</strong></li>
+        
+    </div>
 
-                    </ul>
-                    <p>+82134234</p>
-                    <button class="btn btn-outline-success mr-3">Show phone</button>
-                    <button class="btn btn-primary">Buy</button>
 
-                </div>
 
-            </div>
-        </div>
 
+
+
+<!--Vue-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="app.js"></script>
 
 </body>
 
