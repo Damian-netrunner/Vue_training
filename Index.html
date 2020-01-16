@@ -30,10 +30,11 @@
                     <label for="search">Find your car</label>
                     <input type="text" class="form-control" id="search" placeholder="Model">
                     <hr>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-action pointer">1</li>
-                        <li class="list-group-item list-group-item-action pointer">1</li>
-                        <li class="list-group-item list-group-item-action pointer">1</li>
+                    <ul  class="list-group">
+                        <li v-for="car in cars" class="list-group-item list-group-item-action pointer">
+                            {{ car.name }} - {{ car.model }}
+                        </li>
+                  
                     </ul>
                 </div>
             </div>
@@ -51,7 +52,7 @@
                             <li>Owner <strong>Kavikski</strong></li>
     
                         </ul>
-                        <p>+82134234</p>
+                        <p>+7123123123</p>
                         <button class="btn btn-outline-success mr-3">Show phone</button>
                         <button class="btn btn-primary">Buy</button>
     
@@ -62,7 +63,7 @@
         </div>
 
 
-        
+          
     </div>
 
 
