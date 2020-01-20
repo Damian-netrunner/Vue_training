@@ -28,11 +28,17 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="search">Find your car</label>
-                    <input type="text" class="form-control" id="search" placeholder="Model">
+                    <input type="text" 
+                           class="form-control" 
+                           id="search" 
+                           placeholder="Model"
+                           v-model="search">{{search}}
                     <hr>
                     <ul class="list-group">
-                        <li v-for="(car, index) in cars" class="list-group-item list-group-item-action pointer"
-                        v-on:click="selectCar(index)">
+                        <li v-for="(car, index) in filteredCars" 
+                            class="list-group-item list-group-item-action pointer"
+                            v-on:click="selectCar(index)" 
+                            v-bind:class="{'active': selectedCarIndex === index}">
                             {{ car.name }} - {{ car.model }}
                         </li>
 
@@ -53,8 +59,11 @@
                             <li>Owner <strong>{{car.owner}}</strong></li>
 
                         </ul>
-                        <p>{{car.phone}}</p>
-                        <button class="btn btn-outline-success mr-3">Show phone</button>
+                        <div class="phoneBlock">
+                        <p v-if="phoneVisibility">{{car.phone}}</p>
+                    </div>
+                        <button class="btn btn-outline-success" mr-3 v-on:click="phoneVisibility = !phoneVisibility"
+                        v-text="PhoneBtnText"></button>
                         <button class="btn btn-primary">Buy</button>
 
                     </div>
