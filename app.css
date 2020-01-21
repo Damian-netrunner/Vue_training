@@ -9,3 +9,22 @@
 .phoneBlock {
     height: 40px;
 }
+
+.modal {
+    display: block;
+}
+
+/* анимации*/
+
+/* *~enter */ /* *~leave */
+/* *~enter-active */ /* *~leave-active */
+/* *~enter-to */ /* *~leave-to */
+
+.phone-enter-active, .phone-leave-active {
+transition: all .5s;
+}
+
+.phone-enter, .phone-leave-to {
+ transform: translateX(50px) ;
+ opacity: 0;   
+} 

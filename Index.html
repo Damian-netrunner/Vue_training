@@ -28,17 +28,11 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="search">Find your car</label>
-                    <input type="text" 
-                           class="form-control" 
-                           id="search" 
-                           placeholder="Model"
-                           v-model="search">{{search}}
+                    <input type="text" class="form-control" id="search" placeholder="Model" v-model="search">
                     <hr>
                     <ul class="list-group">
-                        <li v-for="(car, index) in filteredCars" 
-                            class="list-group-item list-group-item-action pointer"
-                            v-on:click="selectCar(index)" 
-                            v-bind:class="{'active': selectedCarIndex === index}">
+                        <li v-for="(car, index) in filteredCars" class="list-group-item list-group-item-action pointer"
+                            v-on:click="selectCar(index)" v-bind:class="{'active': selectedCarIndex === index}">
                             {{ car.name }} - {{ car.model }}
                         </li>
 
@@ -60,11 +54,14 @@
 
                         </ul>
                         <div class="phoneBlock">
-                        <p v-if="phoneVisibility">{{car.phone}}</p>
-                    </div>
+                            <transition name="phone">
+                                <p v-if="phoneVisibility">{{car.phone}}</p>
+                            </transition>
+                            
+                        </div>
                         <button class="btn btn-outline-success" mr-3 v-on:click="phoneVisibility = !phoneVisibility"
-                        v-text="PhoneBtnText"></button>
-                        <button class="btn btn-primary">Buy</button>
+                            v-text="PhoneBtnText"></button>
+                        <button class="btn btn-primary" v-on:click="modalVisibility = true">Buy</button>
 
                     </div>
 
@@ -72,19 +69,61 @@
             </div>
         </div>
 
+        <div class="modal fade show" v-if="modalVisibility" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Do you want to by this car?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            v-on:click="modalVisibility = false">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Current car - <strong>{{car.name}}</strong></p>
+                        <ul>
+                            <li>Model <strong>{{car.model}}</strong></li>
+                            <li>Year <strong>{{car.year}}</strong></li>
+                            <li>Owner <strong>{{car.owner}}</strong></li>
+
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-primary" v-on:click="newOrder">Buy</button>
+
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            v-on:click="cancelOrder">Cancel</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-backdrop fade show" v-if="modalVisibility"></div>
+
+        
+
+            <div class="row pt-3" v-if="logs.length !== 0">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="log in logs"
+                        v-bind:class="{'list-group-item-secondary' : log.type ==='cnl',
+                                        'list-group-item-success' : log.type === 'ok'}" > {{ log.text }} {{log.date | date}} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    
 
 
-    </div>
 
 
-
-
-
-
-    <!--Vue-->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="app.js"></script>
+        <!--Vue-->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="app.js"></script>
 
 </body>
 
 </html>
+
