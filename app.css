@@ -14,6 +14,12 @@
     display: block;
 }
 
+
+ .btn-outline-success {
+    width: 120px;
+
+}
+
 /* анимации*/
 
 /* *~enter */ /* *~leave */
